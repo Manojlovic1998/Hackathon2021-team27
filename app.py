@@ -1,11 +1,23 @@
 import os
+import env
 from flask import Flask, render_template
 
 
 # Flask Config
-app = Flask(__name__)
-app.secret_key = b'\x90?A\x82\x04\xecwn*\xf1\xc3.|\xc8u|'
 
+if env:
+    # Sets Values Using env.py file
+    DEVELOPMENT = env.DEVELOPMENT
+    APP_SECRET_KEY = env.APP_SECRET_KEY
+else:
+    # Sets Values For Deployed Environment
+    DEVELOPMENT = False
+
+app = Flask(__name__)
+app.secret_key = os.getenv('APP_SECRET_KEY', APP_SECRET_KEY)
+
+
+# Views
 
 @app.route('/')
 def renderLandingPage():
@@ -21,4 +33,4 @@ def renderLandingPage():
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'),
             port=os.getenv('PORT'),
-            debug=True)
+            debug=DEVELOPMENT)
