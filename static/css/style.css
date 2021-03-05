@@ -6,7 +6,6 @@ body {
 .jumbatron {
     padding: 4rem 2rem;
     background-color: rgb(68 171 91);
-    border-radius: .3rem;
 }
 
 .hero-svg-icon{
@@ -34,6 +33,21 @@ body {
     text-decoration: none;
     font-weight: bold;
     margin-top: 0.8rem;
+}
+
+/* Questions page css */
+.question-border {
+    border-radius: .3rem;
+    border: 10px solid #ff883e;
+    border-radius: 8px;
+}
+
+.orange-background {
+    background-color: #ff883e;
+}
+
+.text-justify {
+    text-align: justify;
 }
 
 @media (min-width: 992px) {
