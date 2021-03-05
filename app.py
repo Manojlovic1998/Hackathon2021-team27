@@ -40,10 +40,13 @@ def questions():
     question_nr = 2
     next_question = question_nr + 1
 
+    # data = {'questions': questions, 'question_nr': question_nr}
+
     return render_template('questions.html',
                             questions=questions,
                             question_nr=question_nr,
                             next_question=next_question
+                            # data=data
                             )
 
 
