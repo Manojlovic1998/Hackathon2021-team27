@@ -31,13 +31,13 @@ def renderLandingPage():
     """
     return render_template('index.html')
 
-
+# A view for all the questions
 @app.route('/questions')
 def questions():
     with open(questions_json) as q:
         questions = json.load(q)
     
-    question_nr = 0
+    question_nr = 2
     next_question = question_nr + 1
 
     return render_template('questions.html',
