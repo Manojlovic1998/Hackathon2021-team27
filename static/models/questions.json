@@ -1,0 +1,23 @@
+[
+    {
+        "question": "What is the correct answer for question 1?",
+        "correct": "correct1",
+        "incorrect": "incorrect1",
+        "background": "first-question.jpg",
+        "more_info": "Additional info1"
+    },
+    {
+        "question": "What is the correct answer for question 2?",
+        "correct": "correct2",
+        "incorrect": "incorrect2",
+        "background": "second-question.jpg",
+        "more_info": "Additional info2"
+    },
+    {
+        "question": "What is the correct answer for question 3?",
+        "correct": "correct3",
+        "incorrect": "incorrect3",
+        "background": "3rd-question.jpg",
+        "more_info": "Additional info3"
+    }
+]

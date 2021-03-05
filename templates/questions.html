@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Here is where the questions will be</h3>
+
+    
+    <p> Question: {{ questions[question_nr].question }}</p>
+    <p> Correct: {{ questions[question_nr].correct }}</p>
+    <p>Incorrect: {{ questions[question_nr].incorrect }}</p>
+    <p>More Info: {{ questions[question_nr].more_info }}</p>
+    <p>Next Question number is: {{ questions[question_nr].next_question }}</p>
+
+{% endblock %}
+    
