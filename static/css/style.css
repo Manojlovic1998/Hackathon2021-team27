@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.jumbatron {
+    padding: 4rem 2rem;
+    background-color: rgb(68 171 91);
+    border-radius: .3rem;
+}
+
+.hero-svg-icon{
+    height: 15rem;
+    width: 100%;
+    align-self: baseline;
+}
+
+.hero-section {
+    min-height: 100%;
+    max-height: fit-content;
+    background-color: #51b86d;
+}
+
+/* .call-to-action{
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;    
+} */
+
+.hero-link {
+    background-color: #1e764b;
+    padding: 20px 60px 20px 60px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 0.8rem;
+}
+
+@media (min-width: 992px) {
+    .hero-svg-icon{
+        height: 28rem;
+    }
+}
