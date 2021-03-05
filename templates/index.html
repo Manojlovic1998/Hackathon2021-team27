@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Landing Page</h1>
+<div class="hero-section position-absolute align-items-center d-flex w-100">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6 jumbatron text-center text-md-start">
+                <h1 class="text-white fw-bolder display-3">St. Patrick's Day Game!</h1>
+                <p class="text-white fw-bolder call-to-action mt-4 mb-5">
+                    Test your knowledge against your buddy,
+                    or family member. <br> Who will score better?
+                </p>
+                <a href="#" class="hero-link text-white">Start Game</a>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <img class="hero-svg-icon mt-5 mb-5 mb-md-0 mt-md-0"
+                    src="{{ url_for('static', filename='img/cookie.svg') }}" alt="Shamrock">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
