@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container" style="height: 100vh;">
+        <div class="row align-middle">
+            <!-- <h3 styel="text-align: center;">Here is where the questions will be</h3> -->
+
+            <div class="col-12">
+                <p class="text-center">Question number {{ question_nr }}: {{ questions[question_nr].question }}</p>
+            </div>
+            <div class="col-6">
+                <p class="text-center">Correct: {{ questions[question_nr].correct }}</p>
+            </div>
+            <div class="col-6">
+                <p class="text-center">Incorrect: {{ questions[question_nr].incorrect }}</p>
+            </div>
+            <div class="col-12">
+                <p>More Info: {{ questions[question_nr].more_info }}</p>
+            </div>
+            
+            <p>Next Question number is: {{ next_question }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+    
