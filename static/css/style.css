@@ -68,6 +68,21 @@ body {
     margin-top: 0.8rem;
 }
 
+/* Questions page css */
+.question-border {
+    border-radius: .3rem;
+    border: 10px solid #ff883e;
+    border-radius: 8px;
+}
+
+.orange-background {
+    background-color: #ff883e;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 @media (min-width: 992px) {
     .hero-svg-icon{
         height: 28rem;
