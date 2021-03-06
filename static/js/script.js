@@ -1,36 +1,30 @@
 const answerDiv = document.getElementById('answers');
-let confirmation = document.createElement('div');
+let correct = document.getElementById('correct');
+let incorrect = document.getElementById('incorrect');
 
 // Checks if answer is correct from the clicked button
 checkAnswer = (answer) => {
     if (answer == myVar) {
-        confirmation.innerHTML = `
-        <div class="row">
-            <div class="col-12">
-                <h4 class="text-white font-italic mb-2">CORRECT! Congratulations, you have won 1 Shamrock to use in Paddy’s Pub.</h4>
-                <a href="{{ url_for('questions', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
-                <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
-            </div>
-        </div>`;
-        answerDiv.appendChild(confirmation);
+        correct.classList.remove('d-none')
     } else {
-        confirmation.innerHTML = `
-        <div class="row">
-            <div class="col-12">
-                <h4 class="text-white font-italic mb-2">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</h4>
-                <a href="{{ url_for('questions', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
-                <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
-            </div>
-        </div>`;
-        answerDiv.appendChild(confirmation);
+        incorrect.classList.remove('d-none')
     }
     
 }
 
-let allButtons = Array.from(document.querySelectorAll('button'));
+let allButtons = Array.from(document.getElementsByClassName('answer'));
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
         let answer = button.innerText;
-        checkAnswer(answer);
+
+        if (answer == myVar) {
+            correct.classList.remove('d-none')
+        } else {
+            incorrect.classList.remove('d-none')
+        }
+        allButtons.forEach(b => {
+            b.disabled = true;
+            button.disabled = false;
+        })
     })
 })

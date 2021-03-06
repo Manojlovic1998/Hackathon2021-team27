@@ -14,13 +14,29 @@
             <div id="answers" class="col-md-6">
                 <div class="row pt-5">
                     <div class="col-12 mb-5">
-                        <button class="text-center btn text-white orange-background">{{ questions[question_nr].correct }}</button>
+                        <button class="text-center btn text-white orange-background answer">{{ questions[question_nr].correct }}</button>
                     </div>
                     <div class="col-12 mb-5">
-                        <button class="text-center btn text-white orange-background">{{ questions[question_nr].incorrect }}</button>
+                        <button class="text-center btn text-white orange-background answer">{{ questions[question_nr].incorrect1 }}</button>
                     </div>
                     <div class="col-12 mb-5">
-                        <button class="text-center btn text-white orange-background">{{ questions[question_nr].incorrect }}</button>
+                        <button class="text-center btn text-white orange-background answer">{{ questions[question_nr].incorrect2 }}</button>
+                    </div>
+                </div>
+
+                <div class="row d-none" id="correct">
+                    <div class="col-12">
+                        <h4 class="text-white font-italic mb-2">CORRECT! Congratulations, you have won 1 Shamrock to use in Paddy’s Pub.</h4>
+                        <a href="{{ url_for('questions_loop') }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
+                        <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
+                    </div>
+                </div>
+
+                <div class="row d-none" id="incorrect">
+                    <div class="col-12">
+                        <h4 class="text-white font-italic mb-2">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</h4>
+                        <a href="{{ url_for('questions_loop') }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
+                        <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
                     </div>
                 </div>
             </div>
