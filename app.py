@@ -31,22 +31,25 @@ def renderLandingPage():
     """
     return render_template('index.html')
 
+
 # A view for all the questions
-@app.route('/questions')
-def questions():
+@app.route('/questions/<current_question>')
+def questions(current_question):
     with open(questions_json) as q:
         questions = json.load(q)
     
-    question_nr = 2
-    next_question = question_nr + 1
+    if isinstance(current_question, int):
+        question_nr = current_question
+    else:
+        question_nr = int(current_question)
 
-    # data = {'questions': questions, 'question_nr': question_nr}
+    # question_nr = int(current_question)
+    next_question = question_nr + 1
 
     return render_template('questions.html',
                             questions=questions,
                             question_nr=question_nr,
                             next_question=next_question
-                            # data=data
                             )
 
 

@@ -8,7 +8,8 @@ checkAnswer = (answer) => {
         <div class="row">
             <div class="col-12">
                 <h4 class="text-white font-italic mb-2">CORRECT! Congratulations, you have won 1 Shamrock to use in Paddy’s Pub.</h4>
-                <button class="text-center btn orange-background text-white w-75 mb-2">Next question</button>
+                <a href="{{ url_for('questions', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
+                <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
             </div>
         </div>`;
         answerDiv.appendChild(confirmation);
@@ -17,7 +18,8 @@ checkAnswer = (answer) => {
         <div class="row">
             <div class="col-12">
                 <h4 class="text-white font-italic mb-2">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</h4>
-                <button class="text-center btn orange-background text-white w-75 mb-2">Next question</button>
+                <a href="{{ url_for('questions', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
+                <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
             </div>
         </div>`;
         answerDiv.appendChild(confirmation);
