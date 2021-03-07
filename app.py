@@ -1,5 +1,5 @@
 import os
-import env
+import env, random
 from flask import Flask, render_template, json
 # import JSON file
 
@@ -39,12 +39,18 @@ def first_question():
         questions = json.load(q)
     
     question_nr = 0
+    correct = questions[question_nr]["correct"]
+    incorrect1 = questions[question_nr]["incorrect1"]
+    incorrect2 = questions[question_nr]["incorrect2"]
+    answers = [correct, incorrect1, incorrect2]
+    random.shuffle(answers)
     next_question = question_nr + 1
 
     return render_template('questions.html',
                             questions=questions,
                             question_nr=question_nr,
-                            next_question=next_question
+                            next_question=next_question,
+                            answers=answers
                             )
 
 
@@ -59,12 +65,18 @@ def questions_loop(current_question):
     if question_nr == 9:
         return render_template('victory.html')
     else:
+        correct = questions[question_nr]["correct"]
+        incorrect1 = questions[question_nr]["incorrect1"]
+        incorrect2 = questions[question_nr]["incorrect2"]
+        answers = [correct, incorrect1, incorrect2]
+        random.shuffle(answers)
         next_question = question_nr + 1
 
         return render_template('questions.html',
                                 questions=questions,
                                 question_nr=question_nr,
-                                next_question=next_question
+                                next_question=next_question,
+                                answers=answers
                                 )
 
 
