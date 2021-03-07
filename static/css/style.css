@@ -68,6 +68,12 @@ body {
     margin-top: 0.8rem;
 }
 
+@media (min-width: 992px) {
+    .hero-svg-icon{
+        height: 28rem;
+    }
+}
+
 /* Questions page css */
 .question-row-wrap {
     border: 3px solid #000000;
@@ -81,11 +87,27 @@ body {
     background: #f7b98d;
     border: 3px solid #000000;
     min-height: 20rem;
+    width: 19rem;
     max-height: fit-content;
+    margin: 0 auto 0 auto;
 }
 
 .question-wrap>*{
     font-size: 2rem;
+}
+
+.answers-wrap {
+    margin: 0.6rem auto 0 auto;
+    width: 19rem;
+}
+
+.additionalInfo-question {
+    width: 19rem;
+}
+
+.answer-messages {
+    width: 19rem;
+    margin: 0.6rem auto 0 auto;
 }
 
 .question-number-wrap {
@@ -103,6 +125,11 @@ body {
     font-size: 2rem;
     width: fit-content;
 }
+
+.score-shamrock{
+    height: 2rem;
+}
+
 .question-border {
     border: 3px solid #000000;
 }
@@ -111,9 +138,13 @@ body {
     background-color: #ff883e;
 }
 
-.additionalInfo-question{
+.additionalInfo-question {
     border: 2px solid #ffffff;
-    height: 3rem;
+    margin: 0 auto 0 auto;
+}
+
+.additionalInfo-question>* {
+    font-size: 1.2rem;
 }
 
 .answer-btn {
@@ -127,7 +158,6 @@ body {
 .correct-answer-message {
     background-color: #f8cd76;
     border: 3px solid #000000;
-    margin-top: 1.2rem;
     padding: 10px 0px 10px 0px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -142,12 +172,79 @@ body {
     font-weight: bold;
 }
 
-@media (min-width: 992px) {
-    .hero-svg-icon{
-        height: 28rem;
+@media (min-width: 500px){
+    .question-wrap {
+        width: 24rem;
+    }
+
+    .answers-wrap {
+        width: 24rem;
+    }
+
+    .answer-messages {
+        width: 24rem;
+    }
+
+    .additionalInfo-question {
+        width: 24rem;
     }
 }
 
+@media (min-width: 576px) {
+    .question-wrap {
+        width: 30rem;
+    }
+
+    .answers-wrap {
+        width: 30rem;
+    }
+
+    .answer-messages {
+        width: 30rem;
+    }
+
+    .additionalInfo-question {
+        width: 30rem;
+    }
+}
+
+@media (min-width: 768px){
+    .question-wrap {
+        width: 40rem;
+    }
+    
+    .answers-wrap {
+        width: 40rem;
+    }
+
+    .answer-messages {
+        width: 40rem;
+    }
+    
+    .additionalInfo-question {
+        width: 40rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .question-wrap {
+        width: 50%;
+    }
+
+    .answers-wrap {
+        margin: 0 auto 0 auto;
+        width: 50%;
+    }
+
+    .answer-messages {
+        width: 100%;
+        margin: 0.6rem auto 0 auto;
+    }
+
+    .additionalInfo-question {
+        width: 100%;
+    }
+}
 
 /* Scoreboard Page */
 

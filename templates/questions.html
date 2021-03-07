@@ -4,24 +4,31 @@
 
 <div class="hero-section position-absolute align-items-center d-flex w-100">
     <div class="container">
-        <div class="question-row-wrap row text-center p-5"> 
-            <div class="question-number-wrap px-0">
-                <p class="text-white wf-bold question-number">{{ next_question }}.</p>
-                <p id="scoreNumber" class="score-number text-white fw-bold">Score: </p>
+        <div class="question-row-wrap row text-center p-md-5">
+            <!-- Question and score count. -->
+            <div class="question-number-wrap px-0 mt-3">
+                <p class="text-white wf-bold question-number ms-3 ms-md-0">{{ next_question }}.</p>
+                <p id="scoreNumber" class="score-number text-white fw-bold me-3 me-md-0">Score: 
+                    <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">
+                </p>
+            </div>
+            <!-- Additional information about the question is provided below. -->
+            <div class="d-flex additionalInfo-question justify-content-center align-items-center mb-4">
+                <p class="text-white fw-bold m-0"> {{ questions[question_nr].more_info }}</p>
             </div>
             <!-- Question is rendered below.-->
-            <div class="question-wrap col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <div class="question-wrap col-md-6 d-flex justify-content-center align-items-center">
                 <p class="text-black fw-bold">{{ questions[question_nr].question }}</p>
             </div>
             <!-- Answers fields are rendered below. -->
-            <div class="answers-wrap d-flex flex-column pe-0 justify-content-between col-12 col-md-6" id="answers">
+            <div class="answers-wrap d-flex flex-column ps-0 ps-md-2 pe-0 justify-content-between" id="answers">
                 {% for answer in answers %}
-                    <button class="w-100 text-center btn text-white answer-btn">{{ answer }}</button>
+                    <button class="w-100 text-center btn text-black fw-bold answer-btn">{{ answer }}</button>
                 {% endfor %}
            </div>
            <!-- Answers fail or pass messages are rendered below. -->
-           <div class="anwser-messages px-0">
-                <div class="correct-answer-message w-100 d-flex flex-column justify-content-around mb-4 d-none" id="correct">
+           <div class="answer-messages px-0">
+                <div class="correct-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="correct">
                     <p class="text-black">CORRECT! Congratulations, you have won 1 Shamrock.</p>
                     <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
                 </div>
@@ -31,10 +38,6 @@
                     <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
                 </div>
            </div>
-           <!-- Additional information about the question is provided below. -->
-            <div class="w-100 d-flex additionalInfo-question justify-content-center align-items-center">
-                <p class="text-white fw-bold m-0">Additional Info: {{ questions[question_nr].more_info }}</p>
-            </div>
         </div>
     </div>
     
