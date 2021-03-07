@@ -49,21 +49,23 @@ def first_question():
 
 
 # A view for all the questions
-@app.route('/questions_loop')
-def questions_loop():
+@app.route('/questions_loop/<current_question>')
+def questions_loop(current_question):
     with open(questions_json) as q:
         questions = json.load(q)
+
+    question_nr = int(current_question)
     
-    question_nr = 1
+    if question_nr == 9:
+        return render_template('victory.html')
+    else:
+        next_question = question_nr + 1
 
-    # question_nr = int(current_question)
-    next_question = question_nr + 1
-
-    return render_template('questions.html',
-                            questions=questions,
-                            question_nr=question_nr,
-                            next_question=next_question
-                            )
+        return render_template('questions.html',
+                                questions=questions,
+                                question_nr=question_nr,
+                                next_question=next_question
+                                )
 
 
 if __name__ == '__main__':

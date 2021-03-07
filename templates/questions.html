@@ -9,7 +9,7 @@
             </div>
 
             <div class="col-md-6 mb-5">
-                <h1 class="text-white text-center">Question number {{ question_nr }}: {{ questions[question_nr].question }}</h1>
+                <h1 class="text-white text-center">Question number {{ next_question }}: {{ questions[question_nr].question }}</h1>
             </div>
             <div id="answers" class="col-md-6">
                 <div class="row pt-5">
@@ -27,7 +27,7 @@
                 <div class="row d-none" id="correct">
                     <div class="col-12">
                         <h4 class="text-white font-italic mb-2">CORRECT! Congratulations, you have won 1 Shamrock to use in Paddy’s Pub.</h4>
-                        <a href="{{ url_for('questions_loop') }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
+                        <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
                         <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="row d-none" id="incorrect">
                     <div class="col-12">
                         <h4 class="text-white font-italic mb-2">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</h4>
-                        <a href="{{ url_for('questions_loop') }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
+                        <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
                         <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
                     </div>
                 </div>
@@ -52,4 +52,3 @@
     </div>
 </div>
 {% endblock %}
-    
