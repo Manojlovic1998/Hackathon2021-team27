@@ -3,6 +3,20 @@ body {
     padding: 0;
 }
 
+/* Colour pallete */
+
+.green-field {
+    background-color: #28de4b;
+}
+
+.blue-sea {
+    background-color: #3267ed;
+}
+
+.blue-sky {
+    background-color: #5ee5e8;
+}
+
 /* Base Template - Nav */
 
 .bg-orange {
