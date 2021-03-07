@@ -8,7 +8,7 @@
             <!-- Question and score count. -->
             <div class="question-number-wrap px-0 mt-3">
                 <p class="text-white wf-bold question-number ms-3 ms-md-0">{{ next_question }}.</p>
-                <p id="scoreNumber" class="score-number text-white fw-bold me-3 me-md-0">Score: 
+                <p id="score" class="score-number text-white fw-bold me-3 me-md-0">Score: 
                     <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">
                 </p>
             </div>
@@ -30,7 +30,7 @@
            <div class="answer-messages px-0">
                 <div class="correct-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="correct">
                     <p class="text-black">CORRECT! Congratulations, you have won 1 Shamrock.</p>
-                    <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
+                    <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center" id="correct-next">Next question</a>
                 </div>
 
                 <div class="incorrect-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="incorrect">
@@ -43,11 +43,20 @@
     
     <div class="d-none">{{ next_question }}</div>
 
-        <script type="text/javascript">
-            let myVar = "{{ questions[question_nr].correct }}";
-            let next_question = "{{ next_question }}";
-        </script>
+    <script type="text/javascript">
+        // Grabs the variables from Flask
+        let myVar = "{{ questions[question_nr].correct }}";
+        let next_question = "{{ next_question }}";
+        
+        // Displays the score
+        score.innerHTML = `Score:  ${localStorage.getItem('shamrocks')} 
+        <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">`;
+    </script>
 
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script defer src="{{ url_for('static', filename='js/questions.js') }}"></script>
 {% endblock %}

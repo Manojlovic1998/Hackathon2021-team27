@@ -1,17 +1,9 @@
-const answerDiv = document.getElementById('answers');
-let correct = document.getElementById('correct');
-let incorrect = document.getElementById('incorrect');
+const correct = document.getElementById('correct');
+const incorrect = document.getElementById('incorrect');
+const patrickIcon = document.getElementById('patrick-icon');
+const homeButton = document.getElementById('home-button');
 
-// Checks if answer is correct from the clicked button
-checkAnswer = (answer) => {
-    if (answer == myVar) {
-        correct.classList.remove('d-none')
-    } else {
-        incorrect.classList.remove('d-none')
-    }
-    
-}
-
+// Checks if clicked button is the correct answer
 let allButtons = Array.from(document.getElementsByClassName('answer-btn'));
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -28,3 +20,10 @@ allButtons.forEach(button => {
         })
     })
 })
+
+// Resets the scores
+resetScore = () => {
+    localStorage.setItem('shamrocks', '0');
+}
+patrickIcon.addEventListener('click', resetScore);
+homeButton.addEventListener('click', resetScore);
