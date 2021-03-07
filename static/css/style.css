@@ -68,8 +68,124 @@ body {
     margin-top: 0.8rem;
 }
 
+/* Questions page css */
+.question-border {
+    border-radius: .3rem;
+    border: 10px solid #ff883e;
+    border-radius: 8px;
+}
+
+.orange-background {
+    background-color: #ff883e;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 @media (min-width: 992px) {
     .hero-svg-icon{
         height: 28rem;
+    }
+}
+
+
+/* Scoreboard Page */
+
+.header-scoreboard {
+    height: fit-content;
+}
+
+.scoreboard-wrap {
+    height: 40rem;
+    background-color: #2b9c63;
+    border: 3px solid #000000;
+}
+
+.scoreboard-h1{
+    font-size: 2rem;
+}
+
+.clover-banner-scoreboard{
+    height: 2rem;
+}
+
+.inner-scoreboard-wrap{
+    height: 25rem;
+    width: 19rem;
+    background-color: #f7b98d;
+    border: 3px solid #000000;
+    overflow-y: scroll;
+}
+
+@media (min-width: 378px) {
+    .scoreboard-wrap {
+        margin: 0 10px 0 10px;
+    }
+
+    .clover-banner-scoreboard {
+        height: 3rem;
+    }
+
+    .scoreboard-h1{
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 500px){
+    .inner-scoreboard-wrap{
+        width: 23rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .scoreboard-wrap {
+        height: 40rem;
+        margin: 0;
+        padding: 10px;
+        background-color: #2b9c63;
+        border: 3px solid #000000;
+    }
+
+    .scoreboard-h1{
+        font-size: 3rem;
+    }
+    
+    .clover-banner-scoreboard{
+        height: 4.3rem;
+    }
+
+    .inner-scoreboard-wrap{
+        height: 25rem;
+        width: 30rem;
+    }
+}
+
+@media (min-width: 768px){
+    .inner-scoreboard-wrap{
+        height: 25rem;
+        width: 40rem;
+    }
+}
+
+@media (min-width: 992px){
+    .scoreboard-h1{
+        font-size: 4rem;
+    }
+    
+    .clover-banner-scoreboard{
+        height: 6rem;
+    }
+
+    .inner-scoreboard-wrap{
+        height: 25rem;
+        width: 50rem;
+    }
+}
+
+@media (min-width: 1200px){
+    .inner-scoreboard-wrap{
+        height: 25rem;
+        width: 60rem;
     }
 }

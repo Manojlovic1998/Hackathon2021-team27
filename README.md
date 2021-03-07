@@ -1,7 +1,7 @@
 Saint Patricks Family Drinking Game!
 One or two paragraphs providing an overview of your project.
 
-Essentially, this part is your sales pitch.
+Welcome SteveKennyUK,
 
 UX
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.

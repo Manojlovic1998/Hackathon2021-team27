@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="hero-section position-absolute align-items-center d-flex w-100">
+    <div class="container">
+        <div class="scoreboard-wrap row justify-content-center">
+            <div class="header-scoreboard d-flex flex-nowrap justify-content-between align-items-baseline mt-3">
+                <img class="clover-banner-scoreboard" src="{{ url_for('static', filename='/img/banner.svg') }}" alt="Clover Banner">
+                <h1 class="text-white fw-bold scoreboard-h1">Scoreboard</h1>
+                <img class="clover-banner-scoreboard" src="{{ url_for('static', filename='/img/banner.svg') }}" alt="Clover Banner">
+            </div>
+            <div class="inner-scoreboard-wrap">
+
+            </div>
+        <div>
+    </div>
+</div>
+{% endblock %}
