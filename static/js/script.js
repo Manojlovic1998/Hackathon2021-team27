@@ -12,7 +12,7 @@ checkAnswer = (answer) => {
     
 }
 
-let allButtons = Array.from(document.getElementsByClassName('answer'));
+let allButtons = Array.from(document.getElementsByClassName('answer-btn'));
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
         let answer = button.innerText;

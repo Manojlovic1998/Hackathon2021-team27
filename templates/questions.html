@@ -4,42 +4,41 @@
 
 <div class="hero-section position-absolute align-items-center d-flex w-100">
     <div class="container">
-        <div class="row align-items-center text-center justify-content-center jumbatron question-border">
-            <div class="row text-justify text-white">
-                <p>More Info: {{ questions[question_nr].more_info }}</p>
+        <div class="question-row-wrap row text-center p-5"> 
+            <div class="question-number-wrap px-0">
+                <p class="text-white wf-bold question-number">{{ next_question }}.</p>
+                <p id="scoreNumber" class="score-number text-white fw-bold">Score: </p>
             </div>
-
-            <div class="col-md-6 mb-5">
-                <h1 class="text-white text-center">Question number {{ next_question }}: {{ questions[question_nr].question }}</h1>
+            <!-- Question is rendered below.-->
+            <div class="question-wrap col-12 col-md-6 d-flex justify-content-center align-items-center">
+                <p class="text-black fw-bold">{{ questions[question_nr].question }}</p>
             </div>
-            <div id="answers" class="col-md-6">
-                <div class="row pt-5">
-                    {% for answer in answers %}
-                        <div class="col-12 mb-5">
-                            <button class="text-center btn text-white orange-background answer">{{ answer }}</button>
-                        </div>
-                    {% endfor %}
+            <!-- Answers fields are rendered below. -->
+            <div class="answers-wrap d-flex flex-column pe-0 justify-content-between col-12 col-md-6" id="answers">
+                {% for answer in answers %}
+                    <button class="w-100 text-center btn text-white answer-btn">{{ answer }}</button>
+                {% endfor %}
+           </div>
+           <!-- Answers fail or pass messages are rendered below. -->
+           <div class="anwser-messages px-0">
+                <div class="correct-answer-message w-100 d-flex flex-column justify-content-around mb-4 d-none" id="correct">
+                    <p class="text-black">CORRECT! Congratulations, you have won 1 Shamrock.</p>
+                    <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
                 </div>
 
-                <div class="row d-none" id="correct">
-                    <div class="col-12">
-                        <h4 class="text-white font-italic mb-2">CORRECT! Congratulations, you have won 1 Shamrock to use in Paddy’s Pub.</h4>
-                        <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
-                        <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
-                    </div>
+                <div class="incorrect-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="incorrect">
+                    <p class="text-white fw-bold">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</p>
+                    <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
                 </div>
-
-                <div class="row d-none" id="incorrect">
-                    <div class="col-12">
-                        <h4 class="text-white font-italic mb-2">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</h4>
-                        <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white w-75 mb-2 orange-background text-center">Next question</a>
-                        <button class="text-center btn orange-background text-white w-75 mb-2 d-none">Next question</button>
-                    </div>
-                </div>
+           </div>
+           <!-- Additional information about the question is provided below. -->
+            <div class="w-100 d-flex additionalInfo-question justify-content-center align-items-center">
+                <p class="text-white fw-bold m-0">Additional Info: {{ questions[question_nr].more_info }}</p>
             </div>
         </div>
-        
-        <div class="d-none">{{ next_question }}</div>
+    </div>
+    
+    <div class="d-none">{{ next_question }}</div>
 
         <script type="text/javascript">
             let myVar = "{{ questions[question_nr].correct }}";
