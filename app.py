@@ -1,20 +1,13 @@
 import os
-import env, random
+import random
 from flask import Flask, render_template, json
 # import JSON file
 
 # Flask Config
-
-if env:
-    # Sets Values Using env.py file
-    DEVELOPMENT = env.DEVELOPMENT
-    APP_SECRET_KEY = env.APP_SECRET_KEY
-else:
-    # Sets Values For Deployed Environment
-    DEVELOPMENT = False
+DEVELOPMENT = os.getenv('DEVELOPMENT', False)
 
 app = Flask(__name__)
-app.secret_key = os.getenv('APP_SECRET_KEY', APP_SECRET_KEY)
+app.secret_key = os.getenv('APP_SECRET_KEY')
 
 # gets the JSON file with questions
 questions_json = os.path.join(app.static_folder, 'models', 'questions.json')
