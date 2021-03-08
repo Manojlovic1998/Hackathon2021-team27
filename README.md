@@ -1,6 +1,6 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-# Team The Craic of the Hack
+# The Craic of the Hack team
 
 Nemanja Manojlovic, Vladimir Mijatovic, Steve Kenny, Phillip Healy.
 
@@ -18,6 +18,8 @@ about what part of the story the question relates to. The questions and story fl
 
 Having an info page for people to learn more meant you didn't have to go far if you were having trouble with the questions, or if you were hungry for more facts 
 afterwards!
+
+We also made sure to include a page for anyone who ended up with more points than questions (potential cheaters!)
 
 ### User Stories
 
@@ -46,39 +48,43 @@ CSS used to style HTML.
 
 #### Bootstrap 
 
-A framework of 
+A framework of HTML, CSS, and JS libraries that help build the site in a mobile first mindframe.
 
 #### Javascript 
 
+For handling logic and displaying pages correctly as the game progresses.
+
 #### JSON 
 
-#### JQuery 
+JSON is an open standard file format, and data interchange format, 
+that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and array data types.
 
 #### Kleiki 
 
+An open source web paiting tool we used to create all art objects for the game.
+
 #### Slack
 
+Commuincation tool used to message and call and share throughout the project.
 
 ## Testing
 
 We have tested the app in several browsers, one of our testers ran into issues where special characters were not 
-displaying correctly. 
+displaying correctly. We managed to isolate the issues to his computer and now have marked it as solved as he can view the deployed pages correctly!
 
+We tested to ensure scores were calculating correctly and that an anti cheating page would deploy if the score was higher than it possibly would be without cheating.
 
-Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+## Deployment
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+We deployed the project to Heroku 
 
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+## Credits
 
-Credits
-Content
-The text for section Y was copied from the Wikipedia article Z
-Media
-The photos used in this site were obtained from ...
-Acknowledgements
-I received inspiration for this project from X
+A code snippet for our questions.js file was taken from Tobias Schneider at: https://gist.github.com/tobytailor/1164818
+
+Facts, myths and legends surrounding Saint Patrick were sourced from: history.com, biography.com, learnaboutwool.com, shamrockrovers.ie, 
+irishcentral.com, natgeokids.com, nationalgeographic.com, nhm.ac.uk, guinness-storehouse.com
+
+Several icons taken from https://www.flaticon.com/packs/saint-patrick-day-12 free for use with attribution.
+
+All background images created by Phillip Healy.
