@@ -94,7 +94,7 @@ body {
 /* Questions page css */
 .question-row-wrap {
     border: 3px solid #000000;
-    background-color: #2b9c63;
+    background-color: #2b9c6395;
     min-height: 40rem;
     flex-direction: row;
     max-height: fit-content;
@@ -187,6 +187,50 @@ body {
     padding: 10px 0px 10px 0px;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.background-setup {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.background-0 {
+    background-image: url(../../static/img/bg-baby.png);
+}
+
+.background-1 {
+    background-image: url(../../static/img/bg-escape.png);
+}
+
+.background-2 {
+    background-image: url(../../static/img/bg-sheep.png);
+}
+
+.background-3 {
+    background-image: url(../../static/img/bg-escape.png);
+}
+.background-4 {
+    background-image: url(../../static/img/bg-shamrock.png);
+}
+
+.background-5 {
+    background-image: url(../../static/img/bg-leap.png);
+}
+
+.background-6 {
+    background-image: url(../../static/img/bg-snakes.png);
+}
+
+.background-7 {
+    background-image: url(../../static/img/bg-guinness.png);
+}
+
+.background-8 {
+    background-image: url(../../static/img/bg-shamrock.png);
+}
+
+.background-pints {
+    background-image: url(../../static/img/bg-pints.png);
 }
 
 @media (min-width: 500px){
@@ -289,6 +333,10 @@ body {
     background-color: #f7b98d;
     border: 3px solid #000000;
     overflow-y: scroll;
+}
+
+.opacity {
+    opacity: 0.75;
 }
 
 @media (min-width: 378px) {

@@ -67,7 +67,7 @@ def questions_loop(current_question):
 
     question_nr = int(current_question)
 
-    if question_nr == 9:
+    if question_nr == 8:
         return render_template('victory.html')
     else:
         correct = questions[question_nr]["correct"]

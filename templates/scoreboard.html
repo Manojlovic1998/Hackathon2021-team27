@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 
+{% block playbutton %}
+    <li class="nav-item d-flex align-items-center">
+        <a class="nav-play text-white fw-bold" href="{{ url_for('first_question') }}">Play</a>
+    </li>
+{% endblock %}
 
 {% block content %}
-<div class="hero-section position-absolute align-items-center d-flex w-100">
+<div id="hero-section" class="hero-section position-absolute align-items-center d-flex w-100">
     <div class="container">
-        <div class="scoreboard-wrap row justify-content-center">
+        <div id="scoreboard-wrap" class="scoreboard-wrap row justify-content-center">
             <div class="header-scoreboard d-flex flex-nowrap justify-content-between align-items-baseline mt-3">
                 <img class="clover-banner-scoreboard" src="{{ url_for('static', filename='/img/banner.svg') }}" alt="Clover Banner">
                 <h1 class="text-white fw-bold scoreboard-h1">Scoreboard</h1>
                 <img class="clover-banner-scoreboard" src="{{ url_for('static', filename='/img/banner.svg') }}" alt="Clover Banner">
             </div>
             <div class="inner-scoreboard-wrap">
+                <div id="inner-scoreboard">
 
+                </div>
+                <a class="nav-link text-white fw-bold me-md-4" aria-current="page" href="{{ url_for('renderLandingPage') }}">Try it one more time!</a>
             </div>
         <div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script defer src="{{ url_for('static', filename='js/scoreboard.js') }}"></script>
 {% endblock %}
