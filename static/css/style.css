@@ -195,42 +195,42 @@ body {
 }
 
 .background-0 {
-    background-image: url(../../static/img/bg-baby.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214985/Hackathon2021/bg-baby_fhawws.png);
 }
 
 .background-1 {
-    background-image: url(../../static/img/bg-escape.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214986/Hackathon2021/bg-pirates_o2fxye.png);
 }
 
 .background-2 {
-    background-image: url(../../static/img/bg-sheep.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214986/Hackathon2021/bg-sheep_e3zm1t.png);
 }
 
 .background-3 {
-    background-image: url(../../static/img/bg-escape.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214986/Hackathon2021/bg-escape_gozezf.png);
 }
 .background-4 {
-    background-image: url(../../static/img/bg-shamrock.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214986/Hackathon2021/bg-shamrock_jodxg4.png);
 }
 
 .background-5 {
-    background-image: url(../../static/img/bg-leap.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214985/Hackathon2021/bg-leap_fyhkjg.png);
 }
 
 .background-6 {
-    background-image: url(../../static/img/bg-snakes.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214987/Hackathon2021/bg-snakes_v6viup.png);
 }
 
 .background-7 {
-    background-image: url(../../static/img/bg-guinness.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214985/Hackathon2021/bg-guinness_hei7do.png);
 }
 
 .background-8 {
-    background-image: url(../../static/img/bg-shamrock.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214986/Hackathon2021/bg-shamrock_jodxg4.png);
 }
 
 .background-pints {
-    background-image: url(../../static/img/bg-pints.png);
+    background-image: url(https://res.cloudinary.com/drtxn8d5t/image/upload/v1615214987/Hackathon2021/bg-pints_oln73q.png);
 }
 
 @media (min-width: 500px){
