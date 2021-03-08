@@ -1,45 +1,77 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome SteveKennyUK,
+# Team The Craic of the Hack
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Nemanja Manojlovic, Vladimir Mijatovic, Steve Kenny, Phillip Healy.
 
-## Gitpod Reminders
+# Pints with Paddy!
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+A quiz game where you answer general knowledge questions related to the story of Irelands patron Saint Patrick. 
+You will be given bits of the story as you answer the questions and earn a shamrock for each correct answer. If you get them all right you might even be treated to a pint by the man himself!
 
-`python3 -m http.server`
+Also included is a page with more info on the stories and history of Saint Patrick.
 
-A blue button should appear to click: *Make Public*,
+## UX
 
-Another blue button should appear to click: *Open Browser*.
+We chose the layout to focus in on the questions and answers as they are the central point of the game. We also wanted to have a lead in sentence or two 
+about what part of the story the question relates to. The questions and story flow cronologically from the birth all the way through his greatest legends.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Having an info page for people to learn more meant you didn't have to go far if you were having trouble with the questions, or if you were hungry for more facts 
+afterwards!
 
-A blue button should appear to click: *Make Public*,
+### User Stories
 
-Another blue button should appear to click: *Open Browser*.
+As a user I want to be able to answer general trivia about St Patricks day.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+As a parent I want a fun way for my kids to learn more about St Patrick.
 
-## Updates Since The Instructional Video
+As a gamer I want a reward for completing the quiz with all right answers.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Features Left to Implement
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+If we had more time we had planned to implement animations and sounds to each question. At first we tried with HTML/CSS transitions but those were not 
+responsive enough and just detracted from the experience. Then we tried with Green Sock but this won't have taken too much time to learn and implement.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Instead we focused on the writing and logic to make the user experience the best it could be with a simple clean layout.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+##Technologies Used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+HTML, CSS, Bootstrap, Javascript, JSON, 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+JQuery
+The project uses JQuery to simplify DOM manipulation.
+Testing
+In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
---------
+Contact form:
+Go to the "Contact Us" page
+Try to submit the empty form and verify that an error message about the required fields appears
+Try to submit the form with an invalid email address and verify that a relevant error message appears
+Try to submit the form with all inputs valid and verify that a success message appears.
+In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
-Happy coding!
+You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+
+If this section grows too long, you may want to split it off into a separate file and link to it from here.
+
+Deployment
+This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+
+In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+
+Different values for environment variables (Heroku Config Vars)?
+Different configuration files?
+Separate git branch?
+In addition, if it is not obvious, you should also describe how to run your code locally.
+
+Credits
+Content
+The text for section Y was copied from the Wikipedia article Z
+Media
+The photos used in this site were obtained from ...
+Acknowledgements
+I received inspiration for this project from X
