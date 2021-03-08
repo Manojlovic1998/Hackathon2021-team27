@@ -90,6 +90,9 @@ def questions_loop(current_question):
                                next_question=next_question,
                                answers=answers)
 
+@app.route('/info_page')
+def renderInfoPage():
+    return render_template('info.html')
 
 @app.route('/scoreboard')
 def renderScoreboardPage():
