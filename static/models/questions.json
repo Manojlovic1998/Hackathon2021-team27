@@ -1,74 +1,38 @@
 [
     {
-        "question": "Where was St Patrick born?",        
-        "incorrect1": "Ireland",
-        "correct": "Britain",
-        "incorrect2": "France",
-        "background": "0th-question.jpg",
+        "Where was St Patrick born?": ["Britain", "Ireland", "France"],
         "more_info": "We’ll start our journey at the very beginning when Patrick was just a wee baby."
     },
     {
-        "question": "What is the name of Captain Jack Sparrow’s ship in the Pirates of the Caribbean film series?",
-        "incorrect1": "The Black Stuff",        
-        "incorrect2": "The Black Death",
-        "correct": "The Black Pearl",
-        "background": "1st-question.jpg",
+        "What is the name of Captain Jack Sparrow’s ship in the Pirates of the Caribbean film series?": ["The Black Pearl", "The Black Stuff", "The Black Death"],
         "more_info": "You are playing on the beach with Patrick when you notice a strange ship near the shore. Shiver me timbers! It’s pirates! You try to run but it’s too late. You are both captured."
     },
     {
-        "question": "How many stomachs does a sheep have?",       
-        "incorrect1": "2",
-        "incorrect2": "3",
-        "correct": "4",
-        "background": "2nd-question.jpg",
+        "How many stomachs does a sheep have?": ["4", "2", "3"],
         "more_info": "Baa! You and Patrick are taken to Ireland where you are sold into slavery and made to look after sheep."
     },
      {
-        "question": "Where was the ill-fated ship RMS Titanic built?",
-        "correct": "Belfast",
-        "incorrect1": "Dublin",
-        "incorrect2": "Waterford",
-        "background": "3rd-question.jpg",
+        "Where was the ill-fated ship RMS Titanic built?": ["Belfast", "Dublin", "Waterford"],
         "more_info": "The lonely life of mud, bleating and woolly friends is not for Patrick. One night, a voice tells him it is time to leave Ireland. You both flee to the sea where you board a ship and make your escape."
     },
     {
-        "question": "Shamrock Rovers are a football team based in which Irish city?",        
-        "incorrect1": "Cork",
-        "correct": "Dublin",
-        "incorrect2": "Limerick",
-        "background": "4th-question.jpg",
+        "Shamrock Rovers are a football team based in which Irish city?": ["Dublin", "Cork", "Limerick"],
         "more_info": "He’s back!! After years of religious study, Patrick returns to Ireland to spread the word of Christianity among the population. You are particularly impressed by his legendary use of a shamrock to explain the holy trinity."
     },
     {
-        "question": "What is the approximate distance that a red kangaroo can cover in one leap?",        
-        "incorrect1": "5 metres",
-        "incorrect2": "7 metres",
-        "correct": "9 metres",
-        "background": "5th-question.jpg",    
+        "What is the approximate distance that a red kangaroo can cover in one leap?": ["9 metres", "7 metres", "5 metres"],
         "more_info": "Uh-oh, this lady doesn’t look too happy! St. Brigid is complaining that women have to wait far too long for men to propose! In order to keep the peace, Patrick decrees that women may propose to men on the last day of February in a leap year."
     },
     {
-        "question": "The longest snake ever recorded belongs to which species?",        
-        "incorrect1": "Anaconda",
-        "correct": "Reticulated python",
-        "incorrect2": "King cobra",
-        "background": "6th-question.jpg",
+        "The longest snake ever recorded belongs to which species?": ["Reticulated python", "Anaconda", "King cobra"],
         "more_info": "What’s all hiss then? It’s the greatest St. Patrick legend of all, that’s what. You watch in amazement as Patrick delivers a hillside sermon which drives all of Ireland’s snakes into the sea!"
     },
     {
-        "question": "What colour is Guinness?",        
-        "incorrect1": "Black",
-        "correct": "Red",
-        "incorrect2": "Green",
-        "background": "7th-question.jpg",
+        "What colour is Guinness?": ["Red", "Black", "Green"],
         "more_info": "Hurrah! The good word has been spread and the snakes are banished. It’s time to head to Paddy’s Bar, where the Guinness is flowing. First, one last chance to earn a shamrock."
     },
     {
-        "question": "Which of these images is a Celtic cross?",
-        "correct": "image1",
-        "incorrect1": "image2",
-        "incorrect2": "image3",
-        "background": "8th-question.jpg",
+        "Which of these images is a Celtic cross?": ["image1", "image2", "image3"],
         "more_info": "He’s a sharp cookie! Patrick combines Christian and pagan symbology to help win over new followers to his preaching. This includes introducing the Celtic cross to Ireland."
     }
 ]

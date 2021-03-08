@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+<div class="hero-section position-absolute align-items-center justify-content-center flex-column d-flex w-100">
+    <div class="container mt-5">
+        <div class="row align-items-center jumbatron-info justify-content-center">
+            <div class="col-12 text-center text-md-start">
+                <h1 class="text-white text-center fw-bolder mb-5 display-3">Welcome to Pints With Paddy!</h1>
+                <p class="text-white fw-bolder call-to-action mt-4 mb-5 text-center">
+                    The aim of the game is to test your knowledge as you follow the life and legends of St Patrick – and hopefully earn yourself a treat at the end!
+                </p>
+            </div>
+            <form method="POST" action="{{ url_for('create_or_get_user') }}" class="d-flex justify-content-center">
+                <div class="form-group text-center">
+                    <label for="user_name" class="text-white fw-bold">Your name</label>
+                    <input class="form-control" type="text" name="user_name" id="user_name">
+                    <button class="btn start-btn mt-3">Start</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -362,3 +362,10 @@ body {
         width: 60rem;
     }
 }
+
+/* Start Game Page */
+
+.start-btn {
+    width: 100%;
+    background-color: #f5873f;
+}

@@ -1,6 +1,6 @@
-import os
-import random
-from flask import Flask, render_template, json
+import os, random
+from flask import Flask, render_template, json, request,\
+    redirect, url_for, session, jsonify
 # import JSON file
 
 # Flask Config
@@ -11,6 +11,35 @@ app.secret_key = os.getenv('APP_SECRET_KEY')
 
 # gets the JSON file with questions
 questions_json = os.path.join(app.static_folder, 'models', 'questions.json')
+
+with open(questions_json) as question_file:
+    questions = json.load(question_file)
+
+
+# Functions
+def start_session(user):
+    session['user_created'] = True
+    session['user'] = user
+
+    return jsonify(user), 200
+
+
+def shuffle_questions(q):
+    # Create random set of questions keys.
+    selected_keys = []
+    i = 0
+    while i < len(q):
+        current_selection = list(q[i].keys())
+        for key in current_selection:
+            if key != "more_info":
+                if key not in selected_keys:
+                    selected_keys.append(key)
+                    i += 1
+    random.shuffle(selected_keys)
+    return selected_keys
+
+
+questions_shuffled = shuffle_questions(questions)
 
 
 # Views
@@ -26,66 +55,79 @@ def renderLandingPage():
 
 
 # A view for the first question
-@app.route('/first_question')
-def first_question():
+@app.route('/first_question/<questionNumber>')
+def first_question(questionNumber):
     """[summary]
 
     Returns:
-        [type]: [description]
+    [type]: [description]
     """
-    with open(questions_json) as q:
-        questions = json.load(q)
+    if int(questionNumber) == 1:
+        questions_shuffled = shuffle_questions(questions)
 
-    question_nr = 0
-    correct = questions[question_nr]["correct"]
-    incorrect1 = questions[question_nr]["incorrect1"]
-    incorrect2 = questions[question_nr]["incorrect2"]
-    answers = [correct, incorrect1, incorrect2]
-    random.shuffle(answers)
-    next_question = question_nr + 1
+        
+    question = questions_shuffled[int(questionNumber)]
+    for question_object in questions:
+        if question in list(question_object.keys()):
+            answers = question_object[question]
+            more_info = question_object['more_info']
 
     return render_template('questions.html',
-                           questions=questions,
-                           question_nr=question_nr,
-                           next_question=next_question,
-                           answers=answers)
+                           question=question,
+                           question_nr=questionNumber,
+                           answers=answers,
+                           more_info=more_info)
 
 
 # A view for all the questions
-@app.route('/questions_loop/<current_question>')
-def questions_loop(current_question):
-    """[summary]
+@app.route('/answer_check', methods=['GET', 'POST'])
+def check_answer():
+    if request.method == 'POST':
+        print(request)
 
-    Args:
-        current_question ([type]): [description]
+
+@app.route('/start_game')
+def renderStartGame():
+    """Renders starting page for the game.
 
     Returns:
-        [type]: [description]
+        [object]: Response object.
     """
-    with open(questions_json) as q:
-        questions = json.load(q)
+    return render_template('startgame.html')
 
-    question_nr = int(current_question)
 
-    if question_nr == 9:
-        return render_template('victory.html')
+@app.route('/user', methods=['POST'])
+def create_or_get_user():
+    """Depending on the request line type, GET OR POST and if
+    the user exists in session. It will create new user in
+    session or get the old one.
+
+    Returns:
+        [object]: Response object.
+    """
+    if session.get('user') is None and request.method == "POST":
+        user = {
+            'name': request.form.get('user_name'),
+        }
+        start_session(user)
+        questionNumber = 1
+        return redirect(url_for('first_question',
+                                questionNumber=questionNumber))
     else:
-        correct = questions[question_nr]["correct"]
-        incorrect1 = questions[question_nr]["incorrect1"]
-        incorrect2 = questions[question_nr]["incorrect2"]
-        answers = [correct, incorrect1, incorrect2]
-        random.shuffle(answers)
-        next_question = question_nr + 1
+        questionNumber = 1
+        return redirect(url_for('first_question',
+                                questionNumber=questionNumber))
 
-        return render_template('questions.html',
-                               questions=questions,
-                               question_nr=question_nr,
-                               next_question=next_question,
-                               answers=answers)
 
 @app.route('/info_page')
 def renderInfoPage():
+    """Renders info page.
+
+    Returns:
+        [object]: Response object.
+    """
     return render_template('info.html')
+
 
 @app.route('/scoreboard')
 def renderScoreboardPage():

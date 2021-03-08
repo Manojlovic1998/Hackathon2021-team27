@@ -7,18 +7,18 @@
         <div class="question-row-wrap row text-center p-md-5">
             <!-- Question and score count. -->
             <div class="question-number-wrap px-0 mt-3">
-                <p class="text-white wf-bold question-number ms-3 ms-md-0">{{ next_question }}.</p>
+                <p class="text-white wf-bold question-number ms-3 ms-md-0">{{ question_nr }}.</p>
                 <p id="score" class="score-number text-white fw-bold me-3 me-md-0">Score: 
                     <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">
                 </p>
             </div>
             <!-- Additional information about the question is provided below. -->
             <div class="d-flex additionalInfo-question justify-content-center align-items-center mb-4">
-                <p class="text-white fw-bold m-0"> {{ questions[question_nr].more_info }}</p>
+                <p class="text-white fw-bold m-0">{{ more_info }}</p>
             </div>
             <!-- Question is rendered below.-->
             <div class="question-wrap col-md-6 d-flex justify-content-center align-items-center">
-                <p class="text-black fw-bold">{{ questions[question_nr].question }}</p>
+                <p class="text-black fw-bold" id="question">{{ question }}</p>
             </div>
             <!-- Answers fields are rendered below. -->
             <div class="answers-wrap d-flex flex-column ps-0 ps-md-2 pe-0 justify-content-between" id="answers">
@@ -30,40 +30,15 @@
            <div class="answer-messages px-0">
                 <div class="correct-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="correct">
                     <p class="text-black">CORRECT! Congratulations, you have won 1 Shamrock.</p>
-                    <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center" id="correct-next">Next question</a>
+                    <a href="#" class="btn text-white text-center" id="correct-next">Next question</a>
                 </div>
 
                 <div class="incorrect-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="incorrect">
                     <p class="text-white fw-bold">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</p>
-                    <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
-                </div>
-
-                <!-- If user is caught cheating -->
-                <div class="incorrect-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="cheater">
-                    <p class="text-white fw-bold">Cheating isn't nice. Please don't use back and forward buttons.</p>
-                    <a href="{{ url_for('renderLandingPage') }}" class="btn text-white text-center">Click/tap here to start over</a>
+                    <a href="#" class="btn text-white text-center">Next question</a>
                 </div>
            </div>
         </div>
-    </div>
-    
-    <div class="d-none">{{ next_question }}</div>
-
-    <script type="text/javascript">
-        // Grabs the variables from Flask
-        let myVar = "{{ questions[question_nr].correct }}";
-        let next_question = "{{ next_question }}";
-        
-        // Displays the score
-        if (localStorage.getItem('shamrocks') == "Cheater") {
-            score.innerHTML = `No Cheating! Start over! 
-            <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">`;
-        } else {
-            score.innerHTML = `Score:  ${localStorage.getItem('shamrocks')} 
-            <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">`;
-        }
-    </script>
-
     </div>
 </div>
 {% endblock %}
