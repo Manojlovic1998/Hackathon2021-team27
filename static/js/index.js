@@ -1,0 +1,1 @@
+localStorage.setItem('shamrocks', '0')
