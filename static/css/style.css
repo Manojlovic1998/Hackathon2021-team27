@@ -3,6 +3,14 @@ body {
     padding: 0;
 }
 
+.font-italic {
+    font-style: italic;
+}
+
+.text-color-gold {
+    color: #f8cd76;
+}
+
 /* Base Template - Nav */
 
 .bg-orange {
@@ -72,6 +80,15 @@ body {
     .hero-svg-icon{
         height: 28rem;
     }
+}
+
+/* Info Page */
+
+.jumbatron-info {
+    padding: 4rem 2rem;
+    background-color: #2b9c63;
+    border-radius: 0;
+    border: 3px solid #000000;
 }
 
 /* Questions page css */
