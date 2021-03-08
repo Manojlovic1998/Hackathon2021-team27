@@ -4,12 +4,12 @@ document.body.appendChild(finalScore);
 
 // Checks if user has more points than there are questions or manipulated
 // the points through code
-if (localStorage.getItem('shamrocks') > 9) {
+if (localStorage.getItem('shamrocks') > 9) {  // if user has more points than questions
     localStorage.setItem('shamrocks', 'Cheater!');
     finalScore.innerHTML = `
         <h2>Cheating is not nice! Rank: Cheater!<h2>
         `;
-} else {
+} else {  // if shamrock points are not a number
     if (localStorage.getItem('shamrocks') == "NaN") {
         localStorage.setItem('shamrocks', 'Cheater!');
         finalScore.innerHTML = `

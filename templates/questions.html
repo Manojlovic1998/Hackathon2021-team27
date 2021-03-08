@@ -37,6 +37,12 @@
                     <p class="text-white fw-bold">Incorrect! I’m sorry but you have missed out on 1 Shamrock.</p>
                     <a href="{{ url_for('questions_loop', current_question=next_question) }}" class="btn text-white text-center">Next question</a>
                 </div>
+
+                <!-- If user is caught cheating -->
+                <div class="incorrect-answer-message d-flex flex-column justify-content-around w-100 mb-4 d-none" id="cheater">
+                    <p class="text-white fw-bold">Cheating isn't nice. Please don't use back and forward buttons.</p>
+                    <a href="{{ url_for('renderLandingPage') }}" class="btn text-white text-center">Click/tap here to start over</a>
+                </div>
            </div>
         </div>
     </div>
@@ -49,8 +55,13 @@
         let next_question = "{{ next_question }}";
         
         // Displays the score
-        score.innerHTML = `Score:  ${localStorage.getItem('shamrocks')} 
-        <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">`;
+        if (localStorage.getItem('shamrocks') == "Cheater") {
+            score.innerHTML = `No Cheating! Start over! 
+            <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">`;
+        } else {
+            score.innerHTML = `Score:  ${localStorage.getItem('shamrocks')} 
+            <img class="score-shamrock" src="{{ url_for('static', filename='img/shamrock.svg') }}" alt="Green shamrock.">`;
+        }
     </script>
 
     </div>
