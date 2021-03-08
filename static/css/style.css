@@ -57,11 +57,14 @@ body {
 .hero-svg-icon{
     height: 15rem;
     width: 100%;
-    align-self: baseline;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
 }
 
 .hero-section {
     min-height: 100%;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
     max-height: fit-content;
     background-color: #51b86d;
 }
@@ -96,7 +99,12 @@ body {
     border: 3px solid #000000;
     background-color: #2b9c63;
     min-height: 40rem;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
     max-height: fit-content;
 }
 
@@ -105,6 +113,8 @@ body {
     border: 3px solid #000000;
     min-height: 20rem;
     width: 19rem;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
     max-height: fit-content;
     margin: 0 auto 0 auto;
 }
@@ -129,17 +139,25 @@ body {
 
 .question-number-wrap {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .question-number{
     font-size: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
 .score-number{
     font-size: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -266,6 +284,8 @@ body {
 /* Scoreboard Page */
 
 .header-scoreboard {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 

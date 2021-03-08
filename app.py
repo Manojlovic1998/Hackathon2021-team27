@@ -65,7 +65,6 @@ def first_question(questionNumber):
     if int(questionNumber) == 1:
         questions_shuffled = shuffle_questions(questions)
 
-        
     question = questions_shuffled[int(questionNumber)]
     for question_object in questions:
         if question in list(question_object.keys()):
