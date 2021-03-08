@@ -362,3 +362,9 @@ body {
         width: 60rem;
     }
 }
+
+/* Game End Page */
+
+#back-home {
+    text-decoration: none;
+}

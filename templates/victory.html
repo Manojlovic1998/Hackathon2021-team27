@@ -1,7 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1><a href="{{ url_for('renderLandingPage') }}" id="back-home">Victory</a></h1>
+<div class="hero-section position-absolute align-items-center d-flex w-100">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6 jumbatron text-center text-md-start">
+                <h1 class="display-3 fw-bold text-white" id="back-home">Victory</h1>
+                <p class="text-white fw-bolder call-to-action mt-4 mb-5">
+                    Checkout the scoreboard, see how you preformed.
+                </p>
+                <a href="{{ url_for('renderScoreboardPage') }}" class="hero-link text-white">To scoreboard</a>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <img class="hero-svg-icon mt-5 mb-5 mb-md-0 mt-md-0"
+                    src="{{ url_for('static', filename='img/cookie.svg') }}" alt="Shamrock">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
